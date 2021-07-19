@@ -1,0 +1,124 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #ee4d2d;
+    --growth-from: 0;
+    --growth-to: 1;
+    --start-gold: rgb(145, 255, 0);
+    --navbar-height: 34px;
+    --header-height: 120px;
+    --header-with-search: calc( (var(--header-height)  - var(--navbar-height)));
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*Hack convest rem unit --> px: 1rem = 10px*/
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.gird {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.gird_full-width {
+    width: 100%;
+}
+
+.gird_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Buttom style*/
+.btn{
+    text-decoration: none;
+    min-width: 120px;
+    max-width: 180px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    background-color: var(--white-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+/*Modal base*/
+.modal{
+    --growth-from: 0.7;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    height: 100%;
+    width: 100%;
+    animation: growth linear 0.1s;
+}
+
+/*Grid */
+.gird_row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+.grid__col10{
+    width: 83.2%;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: row;
+    /* margin: 0 -5px; */
+}
+
+.grid__col2{
+    width: 16.6667%;
+    padding: 0 5px;
+}
+
+.gird__col2-4{
+    width: 20%;
+    padding: 0 5px;
+}
+
+.row{
+    display: flex;
+}
+/*Animation*/
+@keyframes faceIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }to{
+        transform: scale(var(--growth-to));
+    }
+}
+
