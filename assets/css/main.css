@@ -910,8 +910,44 @@
 .home-fiter__btn-price{
     width: 200px;
     padding: 0 8px;
+    position: relative;
     display: inline-flex;
     justify-content: space-between;
+}
+
+.home-fiter__btn-price::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 8px;
+    width: 100%;
+}
+
+.home-fiter__btn-price:hover .home-fiter__price-order-list{
+    display: unset;
+}
+
+.home-fiter__price-order-list{
+    display: none;
+    top: calc(100% + 8px);
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    border-radius: 4px;
+    width: 100%;
+    background-color: var(--white-color);
+}
+
+.home-fiter__price-order-item{
+    width: 100%;
+    padding: 4px 8px;
+    display: inline-flex;
+    list-style: none;
+}
+
+.home-fiter__price-order-item:hover{
+    background-color: #E9E9E9;
 }
 
 .home-fiter__page-wrapper{
