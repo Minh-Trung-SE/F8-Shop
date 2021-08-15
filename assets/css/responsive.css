@@ -59,6 +59,9 @@
 }
 /* Mobile*/
 @media (max-width: 739px){
+    :root{
+        --header-with-search: 60px;
+    }
     .hide-on-mobile{
         display: none;
     }
