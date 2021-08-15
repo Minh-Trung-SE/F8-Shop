@@ -128,4 +128,8 @@
         display: block;
     }
 
+    .wide{
+        padding: 0 12px;
+    }
+
 }
