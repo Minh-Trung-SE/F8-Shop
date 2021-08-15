@@ -1,3 +1,6 @@
+.app{
+    /* overflow: hidden; */
+}
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -643,7 +646,7 @@
 /*Header cart*/
 .header__cart{
     width: 150px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 
@@ -830,6 +833,101 @@
     transform: translateX(-12px);
 }
 
+/*Header checkbox mobile icon*/
+.header__mobile-seach{
+    display: none;
+}
+
+/*Header sort bar*/
+.header__sort-bar{
+    display: none;
+}
+
+.header__sort-item{
+    flex: 1;
+    list-style: none;
+    position: relative;
+    display: block;
+}
+
+.header__sort-link{
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: var(--header-sort-bar-height);
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+.header__sort-link--active{
+    color: var(--primary-color);
+    height: 100%;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header__sort-item::after{
+    position: absolute;
+    content: "";
+    border-left: 1px solid #e5e5e5;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    transform: translateY(-50%);
+}
+
+.header__sort-item:first-child::after{
+    border-left: none;
+}
+
+.mobile-category{
+    width: 100%;
+    display: none;
+}
+
+.mobile-category__list{
+    display: flex;
+    overflow-x: auto;
+    padding-left: 12px;
+}
+
+.mobile-category__list::-webkit-scrollbar{
+    width: 1px;
+}
+
+.mobile-category__item{
+    list-style: none;
+    display: block;
+    margin-right: 12px;
+    border-radius: 5px;
+}
+
+.mobile-category__item:nth-of-type(3n){
+    background-color: #87AFD8;
+}
+.mobile-category__item:nth-of-type(3n + 1){
+    background-color: #76C9DB;
+}
+.mobile-category__item:nth-of-type(3n + 2){
+    background-color: #88CF81;
+}
+
+.mobile-category__link{
+    color: var(--white-color);
+    text-align: center;
+    text-decoration: none;
+    width: 110px;
+    font-size: 1.4rem;
+    height: 4rem;
+    padding: 4px 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+
 /*Product*/
 /*Category*/
 .container-wrapper{
@@ -837,11 +935,6 @@
     padding-top: 36px;
     background-color: #F5F5F5;
 }
-
-.container{
-    display: flex;
-}
-
 
 .category__heading{
     font-size: 1.6rem;
@@ -891,11 +984,6 @@
 }
 
 /*Product*/
-.product-wrapper{
-    display: flex;
-    flex-direction: column;
-}
-
 .home-fiter-wraper{
     height: 50px;
     width: 100%;
